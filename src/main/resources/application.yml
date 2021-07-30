@@ -1,0 +1,7 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVER}
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP_ID:transaction}
+      auto-offset-reset: ${KAFKA_AUTO_OFFSET_RESET:latest}
+    transactions-topic: ${KAFKA_TRANSACTIONS_TOPIC:transacoes}
