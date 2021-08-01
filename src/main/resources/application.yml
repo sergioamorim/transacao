@@ -5,3 +5,17 @@ spring:
       group-id: ${KAFKA_CONSUMER_GROUP_ID:transaction}
       auto-offset-reset: ${KAFKA_AUTO_OFFSET_RESET:latest}
     transactions-topic: ${KAFKA_TRANSACTIONS_TOPIC:transacoes}
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mariadb://${MARIADB_HOST}:${MARIADB_PORT}/${MARIADB_SCHEMA}
+    username: ${MARIADB_USERNAME}
+    password: ${MARIADB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: ${HIBERNATE_DDL_AUTO:}  # defaults to empty
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB103Dialect
